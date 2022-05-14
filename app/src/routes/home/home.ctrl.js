@@ -1,5 +1,7 @@
 "use strict";
 
+const User = require("../../models/User");
+
 const output = {
     home : function(req,res){
         res.render("home/index");
@@ -11,7 +13,11 @@ const output = {
 
 const process = {
     login : function(req,res){
-        console.log(req,res);
+
+        const user = new User(req.body);
+        const response = user.login();
+        return res.json(response);
+        
     },
 }
 
