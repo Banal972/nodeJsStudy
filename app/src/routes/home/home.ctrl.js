@@ -15,12 +15,10 @@ const output = {
 }
 
 const process = {
-    login : function(req,res){
-
+    login : async function(req,res){
         const user = new User(req.body);
-        const response = user.login();
+        const response = await user.login();
         return res.json(response);
-        
     },
     register : function(req,res){
         const user = new User(req.body);
