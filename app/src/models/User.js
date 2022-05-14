@@ -24,7 +24,7 @@ class User {
     register() {
         const client = this.body;
         const response = UserStorage.save(client);
-        return res.json(response);
+        return response;
     }
 
 };
